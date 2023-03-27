@@ -1,0 +1,10 @@
+<script>
+        /** TRACKER JAVASCRIPT **/
+        var links = document.getElementsByTagName('a');
+        for (var index = 0; index < links.length; index++) {
+            var aux_link = links[index].getAttribute("href");
+            links[index].setAttribute('href', aux_link + window.location.search);
+            console.log(links[index].getAttribute("href"));  
+        }
+        /** TRACKER JAVASCRIPT **/
+    </script>
