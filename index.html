@@ -185,20 +185,20 @@ text-align: center;
 <div class="html-gGrYoE5955026-element ">
 <div>
 <script type="text/javascript">
-var newUrl = location.pathname + location.search;
+var back_redirect_back_link = '/redirect'+ location.search;
+// Não altere daqui para baixo
+history.pushState({}, "", location.href);
+history.pushState({}, "", location.href);
 
-(function(window, location) {
-history.replaceState(null, document.title, newUrl+"#!/backbutton");
-history.pushState(null, document.title, newUrl);
-window.addEventListener("popstate", function() {
-if(location.hash === "#!/backbutton") {
-history.replaceState(null, document.title, newUrl);
-setTimeout(function(){
-location.replace("https://mensagensdeouro.com/br/");
-},0);
-}
+window.addEventListener('popstate', function (event) {
+    if (event.state) {
+        setTimeout(function () {
+
+            location.href = back_redirect_back_link;
+        }, 1);
+    }
 }, false);
-}(window, location));
+
 </script>
 </div>
 </div>
